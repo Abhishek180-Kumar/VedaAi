@@ -2,13 +2,27 @@
 
 import { ArrowLeft, Bell, Sparkles, HelpCircle, Menu } from "lucide-react";
 
-export function TopHeader({ breadcrumb = "Exams" }: { breadcrumb?: string }) {
+export function TopHeader({
+  breadcrumb = "Exams",
+  onBack,
+  showBack = true
+}: {
+  breadcrumb?: string;
+  onBack?: () => void;
+  showBack?: boolean;
+}) {
   return (
     <header className="hidden md:flex items-center justify-between px-6 py-4">
       <div className="flex items-center gap-3 text-sm text-veda-sub">
-        <button aria-label="Go back" className="text-veda-ink">
-          <ArrowLeft size={18} />
-        </button>
+        {showBack && (
+          <button
+            aria-label="Go back"
+            onClick={onBack}
+            className="text-veda-ink hover:opacity-70 transition-opacity"
+          >
+            <ArrowLeft size={18} />
+          </button>
+        )}
         <span className="text-veda-ink font-medium">{breadcrumb}</span>
       </div>
       <div className="flex items-center gap-4">
@@ -31,13 +45,23 @@ export function TopHeader({ breadcrumb = "Exams" }: { breadcrumb?: string }) {
   );
 }
 
-export function MobileHeader({ onMenuClick }: { onMenuClick?: () => void }) {
+export function MobileHeader({
+  onMenuClick,
+  onBack,
+  showBack = true
+}: {
+  onMenuClick?: () => void;
+  onBack?: () => void;
+  showBack?: boolean;
+}) {
   return (
     <header className="flex md:hidden items-center justify-between px-4 py-3 bg-white/70 backdrop-blur border-b border-veda-border">
       <div className="flex items-center gap-2">
-        <button aria-label="Go back" className="text-veda-ink">
-          <ArrowLeft size={18} />
-        </button>
+        {showBack && (
+          <button aria-label="Go back" onClick={onBack} className="text-veda-ink">
+            <ArrowLeft size={18} />
+          </button>
+        )}
         <span className="font-bold">VedaAI</span>
       </div>
       <div className="flex items-center gap-3">
