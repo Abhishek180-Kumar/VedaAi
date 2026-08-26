@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes highlight-pop {
+  0% {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 0 rgba(255, 107, 44, 0.35);
+  }
+  60% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(255, 107, 44, 0);
+  }
+}
+
+.answer-highlight {
+  animation: highlight-pop 420ms ease-out;
+}
+
+:focus-visible {
+  outline: 2px solid #ff6b2c;
+  outline-offset: 2px;
+}
