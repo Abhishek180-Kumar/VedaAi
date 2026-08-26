@@ -311,8 +311,45 @@ function UploadScreen({
       </h1>
       <p className="text-sm text-veda-sub mt-2 mb-6">Upload both files to get started</p>
 
-      <div className="w-20 h-20 rounded-full bg-veda-orangeSoft grid place-items-center mb-8 text-3xl">
-        📝
+      <div className="relative w-24 h-24 mb-8">
+        <div className="absolute inset-0 rounded-full bg-veda-orangeSoft" />
+        <svg
+          viewBox="0 0 96 96"
+          className="absolute inset-0 w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <clipPath id="avatarClip">
+              <circle cx="48" cy="48" r="34" />
+            </clipPath>
+          </defs>
+          <circle cx="48" cy="48" r="34" fill="#FFD9BF" />
+          <g clipPath="url(#avatarClip)">
+            <rect x="18" y="66" width="60" height="28" rx="14" fill="#2B2B2B" />
+            <rect x="42" y="52" width="12" height="14" fill="#E8A97C" />
+            <circle cx="48" cy="42" r="17" fill="#F4C39B" />
+            <path
+              d="M31 40c0-11 8-19 17-19s17 8 17 19c0-4-2-7-5-7-1 3-4 5-7 5-1-3-3-4-5-4s-4 1-5 4c-3 0-6-2-7-5-3 0-5 3-5 7z"
+              fill="#3A2A22"
+            />
+            <circle cx="41" cy="43" r="4.5" fill="none" stroke="#2B2B2B" strokeWidth="1.5" />
+            <circle cx="55" cy="43" r="4.5" fill="none" stroke="#2B2B2B" strokeWidth="1.5" />
+            <line x1="45.5" y1="43" x2="50.5" y2="43" stroke="#2B2B2B" strokeWidth="1.5" />
+            <path d="M44 50c2 2 6 2 8 0" stroke="#8A4B2E" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          </g>
+          <g transform="translate(34,66)">
+            <rect x="0" y="0" width="28" height="18" rx="2" fill="#fff" stroke="#E0771E" strokeWidth="1.5" />
+            <line x1="14" y1="1" x2="14" y2="17" stroke="#E0771E" strokeWidth="1.5" />
+            <line x1="4" y1="6" x2="11" y2="6" stroke="#E0771E" strokeWidth="1" />
+            <line x1="4" y1="10" x2="11" y2="10" stroke="#E0771E" strokeWidth="1" />
+            <line x1="17" y1="6" x2="24" y2="6" stroke="#E0771E" strokeWidth="1" />
+            <line x1="17" y1="10" x2="24" y2="10" stroke="#E0771E" strokeWidth="1" />
+          </g>
+        </svg>
+        <span className="absolute -top-1 left-4 w-2.5 h-2.5 rounded-full bg-veda-orange" />
+        <span className="absolute top-4 -right-1 w-2 h-2 rounded-full bg-veda-orange" />
+        <span className="absolute -bottom-1 left-6 w-2 h-2 rounded-full bg-veda-orange" />
+        <span className="absolute bottom-3 -left-1 w-2.5 h-2.5 rounded-full bg-veda-orange" />
       </div>
 
       <div className="w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-4">
