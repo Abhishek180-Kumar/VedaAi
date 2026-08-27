@@ -107,41 +107,41 @@ export default function AnswerSheetViewer({
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-veda-border bg-veda-ink text-white shrink-0">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-veda-border bg-white text-veda-ink shrink-0">
         <div className="flex items-center gap-2 text-xs">
           <button
             aria-label="Zoom out"
             onClick={() => setZoom((z) => Math.max(0.5, +(z - 0.1).toFixed(2)))}
-            className="grid place-items-center w-6 h-6 rounded bg-white/10 hover:bg-white/20"
+            className="grid place-items-center w-6 h-6 rounded bg-gray-100 hover:bg-gray-200 text-veda-ink"
           >
             <Minus size={12} />
           </button>
-          <span className="w-10 text-center">{Math.round(zoom * 100)}%</span>
+          <span className="w-10 text-center font-medium">{Math.round(zoom * 100)}%</span>
           <button
             aria-label="Zoom in"
             onClick={() => setZoom((z) => Math.min(2.5, +(z + 0.1).toFixed(2)))}
-            className="grid place-items-center w-6 h-6 rounded bg-white/10 hover:bg-white/20"
+            className="grid place-items-center w-6 h-6 rounded bg-gray-100 hover:bg-gray-200 text-veda-ink"
           >
             <Plus size={12} />
           </button>
         </div>
-        <div className="flex items-center gap-2 text-xs">
+        <div className="flex items-center gap-2 text-xs text-veda-sub">
           <button
             aria-label="Previous page"
             disabled={page <= 1}
             onClick={() => setPage((p) => Math.max(1, p - 1))}
-            className="disabled:opacity-30"
+            className="disabled:opacity-30 text-veda-ink"
           >
             <ChevronLeft size={16} />
           </button>
-          <span>
+          <span className="font-medium text-veda-ink">
             Page {page} of {pageCount}
           </span>
           <button
             aria-label="Next page"
             disabled={page >= pageCount}
             onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
-            className="disabled:opacity-30"
+            className="disabled:opacity-30 text-veda-ink"
           >
             <ChevronRight size={16} />
           </button>
