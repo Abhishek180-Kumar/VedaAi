@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Bell, Sparkles, HelpCircle, Menu } from "lucide-react";
+import { ArrowLeft, Bell, Sparkles, HelpCircle, Menu, FileText, User, ChevronDown } from "lucide-react";
 
 export function TopHeader({
   breadcrumb = "Exams",
@@ -13,16 +13,17 @@ export function TopHeader({
 }) {
   return (
     <header className="hidden md:flex items-center justify-between px-6 py-4">
-      <div className="flex items-center gap-3 text-sm text-veda-sub">
+      <div className="flex items-center gap-2 text-sm text-veda-sub">
         {showBack && (
           <button
             aria-label="Go back"
             onClick={onBack}
-            className="text-veda-ink hover:opacity-70 transition-opacity"
+            className="text-veda-ink hover:opacity-70 transition-opacity mr-1"
           >
             <ArrowLeft size={18} />
           </button>
         )}
+        <FileText size={14} className="text-veda-sub" />
         <span className="text-veda-ink font-medium">{breadcrumb}</span>
       </div>
       <div className="flex items-center gap-4">
@@ -34,12 +35,13 @@ export function TopHeader({
           <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-veda-orange" />
         </button>
         <Sparkles size={18} className="text-veda-ink" />
-        <div className="flex items-center gap-2">
-          <span className="grid place-items-center w-8 h-8 rounded-full bg-veda-ink text-white text-xs font-semibold">
-            MR
+        <button className="flex items-center gap-2">
+          <span className="grid place-items-center w-8 h-8 rounded-full bg-gray-100 text-veda-sub">
+            <User size={16} />
           </span>
           <span className="text-sm font-medium">Madhur Rastogi</span>
-        </div>
+          <ChevronDown size={14} className="text-veda-sub" />
+        </button>
       </div>
     </header>
   );
@@ -69,8 +71,8 @@ export function MobileHeader({
           <Bell size={18} />
           <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-veda-orange" />
         </button>
-        <span className="grid place-items-center w-7 h-7 rounded-full bg-veda-ink text-white text-[10px] font-semibold">
-          MR
+        <span className="grid place-items-center w-7 h-7 rounded-full bg-gray-100 text-veda-sub">
+          <User size={14} />
         </span>
         <button aria-label="Menu" onClick={onMenuClick} className="text-veda-ink">
           <Menu size={20} />

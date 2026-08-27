@@ -8,7 +8,8 @@ import {
   Clock,
   Settings,
   Sparkles,
-  PanelLeft
+  PanelLeft,
+  Shield
 } from "lucide-react";
 import { useState } from "react";
 
@@ -70,7 +71,7 @@ export default function Sidebar({ activeLabel, onNavigate }: SidebarProps) {
       )}
 
       <div className="px-3">
-        <button className="w-full flex items-center gap-2 justify-center bg-veda-ink text-white rounded-full py-2.5 text-sm font-medium">
+        <button className="w-full flex items-center gap-2 justify-center bg-veda-ink text-white border-2 border-veda-orange rounded-full py-2.5 text-sm font-medium">
           <Sparkles size={16} className="text-veda-orange" />
           {expanded && "AI Teacher's Toolkit"}
         </button>
@@ -104,8 +105,8 @@ export default function Sidebar({ activeLabel, onNavigate }: SidebarProps) {
         </button>
         {expanded && (
           <div className="flex items-center gap-2 bg-gray-50 rounded-lg p-2.5">
-            <span className="grid place-items-center w-8 h-8 rounded-full bg-veda-greenSoft text-veda-green text-xs font-bold">
-              DP
+            <span className="grid place-items-center w-8 h-8 rounded-full bg-veda-greenSoft text-veda-green">
+              <Shield size={16} />
             </span>
             <div className="text-xs leading-tight">
               <div className="font-semibold">Delhi Public School</div>

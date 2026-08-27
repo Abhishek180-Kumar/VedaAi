@@ -58,7 +58,7 @@ export default function QuestionList({
               onClick={() => onSelect(q.id)}
             >
               <div className="flex items-start gap-3">
-                <span className="grid place-items-center w-6 h-6 rounded-full bg-gray-800 text-white text-[11px] font-semibold shrink-0 mt-0.5">
+                <span className="text-sm font-bold text-veda-ink shrink-0 mt-0.5 w-4 text-center">
                   {idx + 1}
                 </span>
                 <div className="flex-1 min-w-0">
