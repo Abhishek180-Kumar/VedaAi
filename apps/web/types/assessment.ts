@@ -88,6 +88,7 @@ export interface AssessmentResult {
   mappings: Mapping[];
   summary: AssessmentSummary;
   error?: string;
+  isDemo?: boolean;
 }
 
 export type ProcessingStage =
