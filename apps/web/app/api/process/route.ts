@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
   // Demo fallback: only triggers when no key is configured, so the
   // interface remains testable end-to-end without a paid/free key.
   if (!process.env.GEMINI_API_KEY) {
-    return NextResponse.json(DEMO_ASSESSMENT);
+    return NextResponse.json({ ...DEMO_ASSESSMENT, isDemo: true });
   }
 
   try {

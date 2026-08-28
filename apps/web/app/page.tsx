@@ -246,7 +246,7 @@ export default function HomePage() {
                   mobileTab === "questions" ? "flex" : "hidden md:flex"
                 }`}
               >
-                <AssessmentSummary summary={result.summary} />
+                <AssessmentSummary summary={result.summary} isDemo={result.isDemo} />
                 <QuestionList
                   questions={result.questions}
                   mappings={result.mappings}

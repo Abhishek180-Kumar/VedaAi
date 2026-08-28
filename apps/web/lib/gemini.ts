@@ -33,27 +33,44 @@ export async function generateStructuredJSON<T>(params: {
   }
   parts.push({ text: params.prompt });
 
-  const response = await ai.models.generateContent({
-    model: MODEL,
-    contents: [{ role: "user", parts }],
-    config: {
-      temperature: params.temperature ?? 0.2,
-      responseMimeType: "application/json"
-    }
-  });
+  async function attempt(extraInstruction?: string): Promise<T> {
+    const finalParts = extraInstruction
+      ? [...parts.slice(0, -1), { text: params.prompt + "\n\n" + extraInstruction }]
+      : parts;
 
-  const raw = response.text ?? "";
-  const cleaned = raw
-    .trim()
-    .replace(/^```json\s*/i, "")
-    .replace(/^```\s*/i, "")
-    .replace(/```\s*$/i, "");
+    const response = await ai.models.generateContent({
+      model: MODEL,
+      contents: [{ role: "user", parts: finalParts }],
+      config: {
+        temperature: params.temperature ?? 0.2,
+        responseMimeType: "application/json"
+      }
+    });
 
-  try {
+    const raw = response.text ?? "";
+    const cleaned = raw
+      .trim()
+      .replace(/^```json\s*/i, "")
+      .replace(/^```\s*/i, "")
+      .replace(/```\s*$/i, "");
+
     return JSON.parse(cleaned) as T;
-  } catch (err) {
-    throw new Error(
-      `Gemini returned invalid JSON. First 500 chars: ${cleaned.slice(0, 500)}`
-    );
+  }
+
+  // Gemini occasionally returns malformed/truncated JSON. Retry once with a
+  // stricter instruction before giving up, per the "attempt safe recovery"
+  // requirement — never trust raw AI output blindly.
+  try {
+    return await attempt();
+  } catch (firstErr) {
+    try {
+      return await attempt(
+        "IMPORTANT: Your previous response was not valid JSON. Return ONLY a single valid JSON object, with no markdown fences, no commentary, and no trailing commas."
+      );
+    } catch (secondErr: any) {
+      throw new Error(
+        `Gemini returned invalid JSON after retry: ${secondErr?.message || "unknown parse error"}`
+      );
+    }
   }
 }

@@ -1,6 +1,12 @@
 import type { AssessmentSummary as SummaryType } from "@/types/assessment";
 
-export default function AssessmentSummary({ summary }: { summary: SummaryType }) {
+export default function AssessmentSummary({
+  summary,
+  isDemo
+}: {
+  summary: SummaryType;
+  isDemo?: boolean;
+}) {
   const items: { label: string; value: string | number }[] = [
     { label: "Total Questions", value: summary.totalQuestions },
     { label: "Answered", value: summary.answered },
@@ -12,6 +18,12 @@ export default function AssessmentSummary({ summary }: { summary: SummaryType })
 
   return (
     <div className="bg-white rounded-xl2 border border-veda-border p-4 mx-3 my-3 shrink-0">
+      {isDemo && (
+        <div className="mb-3 px-3 py-2 rounded-lg bg-veda-amberSoft text-veda-amber text-xs font-medium">
+          Demo data shown — GEMINI_API_KEY is not configured, so this is sample
+          output, not a real extraction of your uploaded files.
+        </div>
+      )}
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-sm font-semibold">Assessment Summary</h3>
         <span className="text-sm font-bold text-veda-orange">
