@@ -323,27 +323,46 @@ function UploadScreen({
               <circle cx="48" cy="48" r="34" />
             </clipPath>
           </defs>
-          <circle cx="48" cy="48" r="34" fill="#FFD9BF" />
+          <circle cx="48" cy="48" r="34" fill="#FDF1E7" />
           <g clipPath="url(#avatarClip)">
-            <rect x="18" y="66" width="60" height="28" rx="14" fill="#2B2B2B" />
-            <rect x="42" y="52" width="12" height="14" fill="#E8A97C" />
-            <circle cx="48" cy="42" r="17" fill="#F4C39B" />
+            <path d="M16 96 C14 60 20 30 30 22 C24 40 26 60 24 96 Z" fill="#2E2016" />
+            <path d="M80 96 C82 60 76 30 66 22 C72 40 70 60 72 96 Z" fill="#2E2016" />
+            <path d="M12 96 C12 76 27 65 48 65 C69 65 84 76 84 96 Z" fill="#D9631E" />
+            <path d="M35 68 L48 84 L61 68 L61 96 L35 96 Z" fill="#FFFFFF" />
+            <rect x="41" y="56" width="14" height="18" fill="#E7A876" />
             <path
-              d="M31 40c0-11 8-19 17-19s17 8 17 19c0-4-2-7-5-7-1 3-4 5-7 5-1-3-3-4-5-4s-4 1-5 4c-3 0-6-2-7-5-3 0-5 3-5 7z"
-              fill="#3A2A22"
+              d="M18 54 C15 26 30 12 48 12 C66 12 81 26 78 54 C78 44 74 38 70 38 C70 26 60 18 48 18 C36 18 26 26 26 38 C22 38 18 44 18 54 Z"
+              fill="#33241A"
             />
-            <circle cx="41" cy="43" r="4.5" fill="none" stroke="#2B2B2B" strokeWidth="1.5" />
-            <circle cx="55" cy="43" r="4.5" fill="none" stroke="#2B2B2B" strokeWidth="1.5" />
-            <line x1="45.5" y1="43" x2="50.5" y2="43" stroke="#2B2B2B" strokeWidth="1.5" />
-            <path d="M44 50c2 2 6 2 8 0" stroke="#8A4B2E" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-          </g>
-          <g transform="translate(34,66)">
-            <rect x="0" y="0" width="28" height="18" rx="2" fill="#fff" stroke="#E0771E" strokeWidth="1.5" />
-            <line x1="14" y1="1" x2="14" y2="17" stroke="#E0771E" strokeWidth="1.5" />
-            <line x1="4" y1="6" x2="11" y2="6" stroke="#E0771E" strokeWidth="1" />
-            <line x1="4" y1="10" x2="11" y2="10" stroke="#E0771E" strokeWidth="1" />
-            <line x1="17" y1="6" x2="24" y2="6" stroke="#E0771E" strokeWidth="1" />
-            <line x1="17" y1="10" x2="24" y2="10" stroke="#E0771E" strokeWidth="1" />
+            <circle cx="48" cy="43" r="18" fill="#F3C29B" />
+            <path
+              d="M30 33 C30 20 38 13 48 13 C58 13 66 20 66 33 C66 27 60 30 56 26 C52 31 44 31 40 26 C36 30 30 27 30 33 Z"
+              fill="#33241A"
+            />
+            <path d="M28 34 C25 44 25 56 28 66 C31 58 31 44 31 34 Z" fill="#33241A" />
+            <path d="M68 34 C71 44 71 56 68 66 C65 58 65 44 65 34 Z" fill="#33241A" />
+            <path d="M39 37 Q48 33.5 57 37" stroke="#33241A" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+            <circle cx="41" cy="45" r="6.5" fill="#FFFFFF" fillOpacity="0.3" stroke="#2B2B2B" strokeWidth="2" />
+            <circle cx="55" cy="45" r="6.5" fill="#FFFFFF" fillOpacity="0.3" stroke="#2B2B2B" strokeWidth="2" />
+            <line x1="47.5" y1="45" x2="48.5" y2="45" stroke="#2B2B2B" strokeWidth="2" />
+            <line x1="34.5" y1="43" x2="30" y2="41" stroke="#2B2B2B" strokeWidth="1.5" />
+            <line x1="61.5" y1="43" x2="66" y2="41" stroke="#2B2B2B" strokeWidth="1.5" />
+            <circle cx="41" cy="45" r="1.8" fill="#2B2B2B" />
+            <circle cx="55" cy="45" r="1.8" fill="#2B2B2B" />
+            <path d="M48 47 L46.5 52 Q48 53.2 49.5 52" stroke="#D89B6E" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+            <path d="M42 56 Q48 59.5 54 56" stroke="#8A4B2E" strokeWidth="1.7" fill="none" strokeLinecap="round" />
+            <circle cx="35" cy="51" r="2.5" fill="#E88A5C" fillOpacity="0.35" />
+            <circle cx="61" cy="51" r="2.5" fill="#E88A5C" fillOpacity="0.35" />
+            <g transform="translate(28,64)">
+              <path d="M2 5 L20 1 L20 22 L2 26 Z" fill="#FFFFFF" stroke="#D9631E" strokeWidth="1.1" />
+              <path d="M20 1 L38 5 L38 26 L20 22 Z" fill="#FAFAFA" stroke="#D9631E" strokeWidth="1.1" />
+              <line x1="6" y1="11" x2="15" y2="8.5" stroke="#D9631E" strokeWidth="0.9" />
+              <line x1="6" y1="15" x2="15" y2="12.5" stroke="#D9631E" strokeWidth="0.9" />
+              <line x1="6" y1="19" x2="15" y2="16.5" stroke="#D9631E" strokeWidth="0.9" />
+              <line x1="25" y1="8.5" x2="34" y2="11" stroke="#D9631E" strokeWidth="0.9" />
+              <line x1="25" y1="12.5" x2="34" y2="15" stroke="#D9631E" strokeWidth="0.9" />
+              <line x1="25" y1="16.5" x2="34" y2="19" stroke="#D9631E" strokeWidth="0.9" />
+            </g>
           </g>
         </svg>
         <span className="absolute -top-1 left-4 w-2.5 h-2.5 rounded-full bg-veda-orange" />
